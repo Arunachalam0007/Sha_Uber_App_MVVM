@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A868E36C08612CC22350615 /* Pods_Sha_Uber_App_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE558BCAA348369491F5E30 /* Pods_Sha_Uber_App_MVVM.framework */; };
 		DB1314672666000A00FE19DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1314662666000A00FE19DC /* AppDelegate.swift */; };
 		DB1314692666000A00FE19DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1314682666000A00FE19DC /* SceneDelegate.swift */; };
 		DB13146E2666000A00FE19DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB13146C2666000A00FE19DC /* Main.storyboard */; };
@@ -16,9 +17,15 @@
 		DB1314862666090100FE19DC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1314852666090100FE19DC /* Extensions.swift */; };
 		DB13148826664D8A00FE19DC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB13148726664D8A00FE19DC /* RegistrationViewController.swift */; };
 		DB13148B2666590500FE19DC /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB13148A2666590500FE19DC /* AuthButton.swift */; };
+		DB13148D26665FCF00FE19DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB13148C26665FCF00FE19DC /* GoogleService-Info.plist */; };
+		DB13148F2666667C00FE19DC /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB13148E2666667C00FE19DC /* AuthenticationViewModel.swift */; };
+		DB131491266666C800FE19DC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB131490266666C800FE19DC /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00061D6137370BB9D0A74CBA /* Pods-Sha_Uber_App_MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sha_Uber_App_MVVM.release.xcconfig"; path = "Target Support Files/Pods-Sha_Uber_App_MVVM/Pods-Sha_Uber_App_MVVM.release.xcconfig"; sourceTree = "<group>"; };
+		4CE558BCAA348369491F5E30 /* Pods_Sha_Uber_App_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sha_Uber_App_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B077C79187FEFE839D02704A /* Pods-Sha_Uber_App_MVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sha_Uber_App_MVVM.debug.xcconfig"; path = "Target Support Files/Pods-Sha_Uber_App_MVVM/Pods-Sha_Uber_App_MVVM.debug.xcconfig"; sourceTree = "<group>"; };
 		DB1314632666000A00FE19DC /* Sha_Uber_App_MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sha_Uber_App_MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1314662666000A00FE19DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB1314682666000A00FE19DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +37,9 @@
 		DB1314852666090100FE19DC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DB13148726664D8A00FE19DC /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		DB13148A2666590500FE19DC /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		DB13148C26665FCF00FE19DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DB13148E2666667C00FE19DC /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		DB131490266666C800FE19DC /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A868E36C08612CC22350615 /* Pods_Sha_Uber_App_MVVM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		712268C02E90BDE1CADB4798 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B077C79187FEFE839D02704A /* Pods-Sha_Uber_App_MVVM.debug.xcconfig */,
+				00061D6137370BB9D0A74CBA /* Pods-Sha_Uber_App_MVVM.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8BE420A9D4443B3DC24D600D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CE558BCAA348369491F5E30 /* Pods_Sha_Uber_App_MVVM.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DB13145A2666000A00FE19DC = {
 			isa = PBXGroup;
 			children = (
 				DB1314652666000A00FE19DC /* Sha_Uber_App_MVVM */,
 				DB1314642666000A00FE19DC /* Products */,
+				712268C02E90BDE1CADB4798 /* Pods */,
+				8BE420A9D4443B3DC24D600D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +101,7 @@
 				DB13147F2666009700FE19DC /* Views */,
 				DB131480266600A300FE19DC /* Delegates */,
 				DB13146F2666000C00FE19DC /* Assets.xcassets */,
+				DB13148C26665FCF00FE19DC /* GoogleService-Info.plist */,
 				DB1314742666000C00FE19DC /* Info.plist */,
 			);
 			path = Sha_Uber_App_MVVM;
@@ -86,6 +117,7 @@
 		DB13147B2666005000FE19DC /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				DB13148E2666667C00FE19DC /* AuthenticationViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -108,6 +140,7 @@
 		DB13147E2666007300FE19DC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DB131490266666C800FE19DC /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -163,9 +196,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB1314772666000C00FE19DC /* Build configuration list for PBXNativeTarget "Sha_Uber_App_MVVM" */;
 			buildPhases = (
+				CE253C7C6A3F23BD4B9480DA /* [CP] Check Pods Manifest.lock */,
 				DB13145F2666000A00FE19DC /* Sources */,
 				DB1314602666000A00FE19DC /* Frameworks */,
 				DB1314612666000A00FE19DC /* Resources */,
+				535536EE01417265EF596B92 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -214,12 +249,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB1314732666000C00FE19DC /* LaunchScreen.storyboard in Resources */,
+				DB13148D26665FCF00FE19DC /* GoogleService-Info.plist in Resources */,
 				DB1314702666000C00FE19DC /* Assets.xcassets in Resources */,
 				DB13146E2666000A00FE19DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		535536EE01417265EF596B92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sha_Uber_App_MVVM/Pods-Sha_Uber_App_MVVM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sha_Uber_App_MVVM/Pods-Sha_Uber_App_MVVM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sha_Uber_App_MVVM/Pods-Sha_Uber_App_MVVM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE253C7C6A3F23BD4B9480DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sha_Uber_App_MVVM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DB13145F2666000A00FE19DC /* Sources */ = {
@@ -228,10 +306,12 @@
 			files = (
 				DB1314822666014000FE19DC /* LoginViewController.swift in Sources */,
 				DB13148B2666590500FE19DC /* AuthButton.swift in Sources */,
+				DB13148F2666667C00FE19DC /* AuthenticationViewModel.swift in Sources */,
 				DB1314672666000A00FE19DC /* AppDelegate.swift in Sources */,
 				DB1314692666000A00FE19DC /* SceneDelegate.swift in Sources */,
 				DB1314862666090100FE19DC /* Extensions.swift in Sources */,
 				DB13148826664D8A00FE19DC /* RegistrationViewController.swift in Sources */,
+				DB131491266666C800FE19DC /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +455,7 @@
 		};
 		DB1314782666000C00FE19DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B077C79187FEFE839D02704A /* Pods-Sha_Uber_App_MVVM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -394,6 +475,7 @@
 		};
 		DB1314792666000C00FE19DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00061D6137370BB9D0A74CBA /* Pods-Sha_Uber_App_MVVM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

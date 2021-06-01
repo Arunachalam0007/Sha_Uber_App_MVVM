@@ -12,6 +12,8 @@ class RegistrationViewController: UIViewController {
     
     // MARK: - Properties
         
+    var registrationVM = RegistrationViewModel()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "UBER"
@@ -95,7 +97,17 @@ class RegistrationViewController: UIViewController {
     // MARK: - Selectors
     
     @objc func handleSignUp() {
-       
+        registrationVM.email = emailTextField.text
+        registrationVM.password = passwordTextField.text
+        registrationVM.fullname = fullnameTextField.text
+        registrationVM.rideType = accountTypeSegmentedControl.titleForSegment(at: accountTypeSegmentedControl.selectedSegmentIndex)
+        registrationVM.registerUserDetails { result in
+            if let result = result {
+                print("Login SuccessFUlly: ",result)
+            } else {
+                print("Login Error")
+            }
+        }
     }
     
     @objc func handleShowLogin() {
