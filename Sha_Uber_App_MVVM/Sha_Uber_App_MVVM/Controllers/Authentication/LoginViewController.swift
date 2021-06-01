@@ -39,11 +39,8 @@ class LoginViewController: UIViewController {
     }()
     
     private let loginButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = AuthButton(type: .system)
         button.setTitle("Log In", for: .normal)
-        button.backgroundColor =  .mainBlueTint
-        button.layer.cornerRadius = 5
-        button.setTitleColor(UIColor(white: 1, alpha: 0.5), for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
@@ -75,7 +72,8 @@ class LoginViewController: UIViewController {
     }
     
     @objc func handleShowSignUp() {
-        print("Sign up Button Got Pressed")
+        let signUpVC = RegistrationViewController()
+        navigationController?.pushViewController(signUpVC, animated: true)
     }
     
     
@@ -107,7 +105,7 @@ class LoginViewController: UIViewController {
         view.addSubview(stackView)
         stackView.anchor(top: titleLable.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40, paddingLeft: 16, paddingRight: 16 )
         
-        
+        // added dontHaveAccountButton
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.centerX(inView: view)
         dontHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, height: 32)

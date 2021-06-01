@@ -27,7 +27,7 @@ extension UIColor {
 
 extension UIView {
     
-    func createCustomContainer(image: UIImage, textField: UITextField) -> UIView {
+    func createCustomContainer(image: UIImage, textField: UITextField? = nil, segmentedControl: UISegmentedControl? = nil) -> UIView {
         let containerView = UIView()
         //containerView.backgroundColor = .red
         
@@ -35,12 +35,23 @@ extension UIView {
         imageView.image = image
         
         containerView.addSubview(imageView)
-        imageView.anchor(left: containerView.leftAnchor,width: 24, height: 24, paddingLeft: 8)
-        imageView.centerY(inView: containerView)
         
-        containerView.addSubview(textField)
-        textField.anchor(left: imageView.rightAnchor,bottom: containerView.bottomAnchor, right: containerView.rightAnchor, paddingLeft: 2, paddingBottom: 8)
-        textField.centerY(inView: containerView)
+        if let textField = textField {
+            imageView.anchor(left: containerView.leftAnchor,width: 24, height: 24, paddingLeft: 8)
+            imageView.centerY(inView: containerView)
+            
+            containerView.addSubview(textField)
+            textField.anchor(left: imageView.rightAnchor,bottom: containerView.bottomAnchor, right: containerView.rightAnchor, paddingLeft: 8, paddingBottom: 8)
+            textField.centerY(inView: containerView)
+        }
+  
+        if let segmentedControl = segmentedControl {
+            imageView.anchor(top:containerView.topAnchor ,left: containerView.leftAnchor,width: 24, height: 24, paddingTop: -8, paddingLeft: 8)
+            
+            containerView.addSubview(segmentedControl)
+            segmentedControl.anchor(left: containerView.leftAnchor, right: containerView.rightAnchor, height: 50, paddingLeft: 8)
+            segmentedControl.centerY(inView: containerView)
+        }
         
         let deviderView = UIView()
         deviderView.backgroundColor = .lightGray
