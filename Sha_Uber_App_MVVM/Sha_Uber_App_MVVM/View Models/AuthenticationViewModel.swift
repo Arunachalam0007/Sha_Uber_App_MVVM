@@ -33,7 +33,10 @@ struct LoginViewModel {
     var btnIsValid:Bool {
         return email?.isEmpty == false && password?.isEmpty == false
     }
-
+    
+    var btnBackgroundColor: UIColor {
+        return btnIsValid ? .mainBlueTint : .backgroundColor
+    }
     
     func userLogin(completion: @escaping (String?)->()){
         guard let email = email, let password = password else {
@@ -57,9 +60,12 @@ struct RegistrationViewModel {
     var rideType: String?
     
     var btnIsValid: Bool {
-        return email?.isEmpty == false && password?.isEmpty == false && fullname?.isEmpty == false && rideType?.isEmpty == false
+        return email?.isEmpty == false && password?.isEmpty == false && fullname?.isEmpty == false
     }
-
+    
+    var btnBackgroundColor: UIColor {
+        return btnIsValid ? .mainBlueTint : .backgroundColor
+    }
     
     func registerUserDetails(completion:@escaping (String?)->()) {
         guard let email = email,let password = password,let fullname = fullname,let rideType = rideType else {

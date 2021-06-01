@@ -10,6 +10,9 @@ import UIKit
 class LoginViewController: UIViewController {
 
     // MARK: - Properties
+    
+    var loginVM = LoginViewModel()
+    
     private let titleLable: UILabel = {
         let titleLab = UILabel()
         titleLab.text = "UBER"
@@ -68,7 +71,12 @@ class LoginViewController: UIViewController {
     // MARK: - Selectors
     
     @objc func handleLogin() {
-        print("Login In Button Got Pressed")
+        loginVM.userLogin { result in
+            guard let result = result else {
+                return
+            }
+            print("DEBUG: Login SuccessFully: ",result)
+        }
     }
     
     @objc func handleShowSignUp() {
@@ -76,6 +84,21 @@ class LoginViewController: UIViewController {
         navigationController?.pushViewController(signUpVC, animated: true)
     }
     
+    @objc func textFieldDidChanged(sender: UITextField){
+        
+        if sender == emailTextField {
+            loginVM.email = sender.text
+        } else if sender == passwordTextField {
+            loginVM.password = sender.text
+        }
+        loginButton.isEnabled = loginVM.btnIsValid
+        loginButton.backgroundColor = loginVM.btnBackgroundColor
+    }
+    
+    func configureNotificationObservers(){
+        emailTextField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
+    }
     
     // MARK: - Helpers Function
     
@@ -87,7 +110,7 @@ class LoginViewController: UIViewController {
     func setupUI() {
         
         configureNavigationBar()
-        
+        configureNotificationObservers()
         //add title lable
         view.addSubview(titleLable)
         titleLable.anchor(top:view.safeAreaLayoutGuide.topAnchor)

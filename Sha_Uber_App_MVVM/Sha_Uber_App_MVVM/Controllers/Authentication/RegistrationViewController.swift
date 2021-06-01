@@ -71,6 +71,7 @@ class RegistrationViewController: UIViewController {
         button.setTitle("Sign Up", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
+        button.isEnabled = false
         return button
     }()
     
@@ -103,15 +104,34 @@ class RegistrationViewController: UIViewController {
         registrationVM.rideType = accountTypeSegmentedControl.titleForSegment(at: accountTypeSegmentedControl.selectedSegmentIndex)
         registrationVM.registerUserDetails { result in
             if let result = result {
-                print("Login SuccessFUlly: ",result)
+                print("DEBUG: SignUp SuccessFUlly: ",result)
             } else {
-                print("Login Error")
+                print("DEBUG: SignUp Error")
             }
         }
     }
     
     @objc func handleShowLogin() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func textFieldDidChanged(sender: UITextField){
+        
+        if sender == emailTextField {
+            registrationVM.email = sender.text
+        } else if sender == passwordTextField {
+            registrationVM.password = sender.text
+        } else if sender == fullnameTextField {
+            registrationVM.fullname = sender.text
+        }
+        signUpButton.isEnabled = registrationVM.btnIsValid
+        signUpButton.backgroundColor = registrationVM.btnBackgroundColor
+    }
+    
+    func configureNotificationObservers(){
+        emailTextField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
+        fullnameTextField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
     }
     
     // MARK: - Helper Functions
@@ -143,6 +163,7 @@ class RegistrationViewController: UIViewController {
         view.addSubview(alreadyHaveAccountButton)
         alreadyHaveAccountButton.centerX(inView: view)
         alreadyHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, height: 32)
+        configureNotificationObservers()
     }
     
 }

@@ -13,7 +13,7 @@ class AuthButton: UIButton {
         super.init(frame: frame)
         
         layer.cornerRadius = 5
-        backgroundColor = .mainBlueTint
+        backgroundColor = .backgroundColor
         setTitleColor(.white, for: .normal)
         heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
