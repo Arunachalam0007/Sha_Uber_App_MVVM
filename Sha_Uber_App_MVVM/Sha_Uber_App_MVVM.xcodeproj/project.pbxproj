@@ -24,6 +24,7 @@
 		DB13149526675AA100FE19DC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DB13149426675AA100FE19DC /* README.md */; };
 		DB13149726676DD500FE19DC /* LocationInputActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB13149626676DD500FE19DC /* LocationInputActivationView.swift */; };
 		DB1314992667850200FE19DC /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1314982667850200FE19DC /* LocationInputView.swift */; };
+		DB13149B26680F4700FE19DC /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB13149A26680F4700FE19DC /* LocationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		DB13149426675AA100FE19DC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DB13149626676DD500FE19DC /* LocationInputActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputActivationView.swift; sourceTree = "<group>"; };
 		DB1314982667850200FE19DC /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
+		DB13149A26680F4700FE19DC /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				DB13149626676DD500FE19DC /* LocationInputActivationView.swift */,
 				DB13148A2666590500FE19DC /* AuthButton.swift */,
 				DB131489266658F400FE19DC /* StoryBoards */,
+				DB13149A26680F4700FE19DC /* LocationCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				DB13148F2666667C00FE19DC /* AuthenticationViewModel.swift in Sources */,
 				DB1314672666000A00FE19DC /* AppDelegate.swift in Sources */,
 				DB1314692666000A00FE19DC /* SceneDelegate.swift in Sources */,
+				DB13149B26680F4700FE19DC /* LocationCell.swift in Sources */,
 				DB131493266758D400FE19DC /* HomeViewController.swift in Sources */,
 				DB1314862666090100FE19DC /* Extensions.swift in Sources */,
 				DB13148826664D8A00FE19DC /* RegistrationViewController.swift in Sources */,

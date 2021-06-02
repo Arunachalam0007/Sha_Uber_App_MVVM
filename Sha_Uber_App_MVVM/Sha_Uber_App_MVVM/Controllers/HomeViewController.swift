@@ -8,6 +8,9 @@
 import UIKit
 import MapKit
 
+private let reuseIdentifier = "LocationCell"
+
+
 class HomeViewController: UIViewController {
     
     // MARK: - Properties
@@ -17,6 +20,11 @@ class HomeViewController: UIViewController {
     private let inputActivationView = LocationInputActivationView()
     private let locationInputView = LocationInputView()
     
+    private final let locationInputViewHeight: CGFloat = 200
+    
+    private let tableView = UITableView()
+
+
     // MARK: - LifeCycle
 
     override func viewDidLoad() {
@@ -35,6 +43,7 @@ class HomeViewController: UIViewController {
     
     func setupUI() {
         configureLocationInputActivationView()
+        configureTableView()
     }
     
     func configureLocationInputActivationView() {
@@ -62,7 +71,26 @@ class HomeViewController: UIViewController {
             self.locationInputView.alpha = 1
         }) { _ in
             print("DEBUG: LocationInputView Showed")
+            UIView.animate(withDuration: 0.3) {
+                self.tableView.frame.origin.y = self.locationInputViewHeight
+            }
         }
+    }
+    
+    func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(LocationCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.rowHeight = 60
+        tableView.tableFooterView = UIView()
+        
+        let height = view.frame.height - locationInputViewHeight
+        tableView.frame = CGRect(x: 0, y: view.frame.height,
+                                 width: view.frame.width, height: height)
+        
+        view.addSubview(tableView)
+        
     }
     
 }
@@ -80,10 +108,15 @@ extension HomeViewController: LocationInputActivationViewDelegate{
 
 extension HomeViewController: LocationInputViewDelegate{
     func dismissLocationInputView() {
-        locationInputView.alpha = 0
-        UIView.animate(withDuration: 0.5, animations: {
-            self.inputActivationView.alpha = 1
-        })
+        UIView.animate(withDuration: 0.3) {
+            self.locationInputView.alpha = 0
+            self.locationInputView.removeFromSuperview()
+            self.tableView.frame.origin.y = self.view.frame.height
+        } completion: { _ in
+            UIView.animate(withDuration: 20, animations: {
+                self.inputActivationView.alpha = 1
+            })
+        }
     }
 }
 
@@ -133,3 +166,34 @@ extension HomeViewController: CLLocationManagerDelegate{
     }
 }
 
+// MARK: - CommentsUITableViewDelegate UITableViewDataSource
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "Saved Locations" : "Results"
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return section == 0 ? 2 : 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! LocationCell
+        
+//        if indexPath.section == 0 {
+//            cell.placemark = savedLocations[indexPath.row]
+//        }
+//
+//        if indexPath.section == 1 {
+//            cell.placemark = searchResults[indexPath.row]
+//        }
+        
+        return cell
+    }
+    
+}
