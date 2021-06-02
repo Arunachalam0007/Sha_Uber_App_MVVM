@@ -23,6 +23,7 @@
 		DB131493266758D400FE19DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB131492266758D400FE19DC /* HomeViewController.swift */; };
 		DB13149526675AA100FE19DC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DB13149426675AA100FE19DC /* README.md */; };
 		DB13149726676DD500FE19DC /* LocationInputActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB13149626676DD500FE19DC /* LocationInputActivationView.swift */; };
+		DB1314992667850200FE19DC /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1314982667850200FE19DC /* LocationInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		DB131492266758D400FE19DC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DB13149426675AA100FE19DC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DB13149626676DD500FE19DC /* LocationInputActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputActivationView.swift; sourceTree = "<group>"; };
+		DB1314982667850200FE19DC /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		DB13147F2666009700FE19DC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DB1314982667850200FE19DC /* LocationInputView.swift */,
 				DB13149626676DD500FE19DC /* LocationInputActivationView.swift */,
 				DB13148A2666590500FE19DC /* AuthButton.swift */,
 				DB131489266658F400FE19DC /* StoryBoards */,
@@ -324,6 +327,7 @@
 				DB1314862666090100FE19DC /* Extensions.swift in Sources */,
 				DB13148826664D8A00FE19DC /* RegistrationViewController.swift in Sources */,
 				DB131491266666C800FE19DC /* AuthService.swift in Sources */,
+				DB1314992667850200FE19DC /* LocationInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     private let locationManager = CLLocationManager()
 
     private let inputActivationView = LocationInputActivationView()
+    private let locationInputView = LocationInputView()
     
     // MARK: - LifeCycle
 
@@ -49,7 +50,43 @@ class HomeViewController: UIViewController {
             self.inputActivationView.alpha = 1
         }
     }
+    
+    func configureLocationInputView() {
+        locationInputView.delegate = self
+        view.addSubview(locationInputView)
+        locationInputView.anchor(top: view.topAnchor, left: view.leftAnchor,
+                                 right: view.rightAnchor, height: 200)
+        locationInputView.alpha = 0
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.locationInputView.alpha = 1
+        }) { _ in
+            print("DEBUG: LocationInputView Showed")
+        }
+    }
+    
 }
+
+// MARK: - LocationInputActivationViewDelegate
+
+extension HomeViewController: LocationInputActivationViewDelegate{
+    func presentLocationInputView() {
+        configureLocationInputView()
+    }
+}
+
+
+// MARK: - LocationInputViewDelegate
+
+extension HomeViewController: LocationInputViewDelegate{
+    func dismissLocationInputView() {
+        locationInputView.alpha = 0
+        UIView.animate(withDuration: 0.5, animations: {
+            self.inputActivationView.alpha = 1
+        })
+    }
+}
+
 
 // MARK: - Location Service
 
@@ -95,14 +132,4 @@ extension HomeViewController: CLLocationManagerDelegate{
         
     }
 }
-
-
-// MARK: - LocationInputActivationViewDelegate
-
-extension HomeViewController: LocationInputActivationViewDelegate{
-    func presentLocationInputView() {
-        print("DEBUG: presentLocationInputView")
-    }
-}
-
 
