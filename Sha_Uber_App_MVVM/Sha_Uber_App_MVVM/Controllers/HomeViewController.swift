@@ -41,6 +41,13 @@ class HomeViewController: UIViewController {
         inputActivationView.centerX(inView: view)
         inputActivationView.setDimensions(height: 50, width: view.frame.width - 64)
         inputActivationView.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
+        inputActivationView.alpha = 0
+        inputActivationView.locationInputDelegate = self
+        
+        //Animate show the inputActivationView after 1 sec
+        UIView.animate(withDuration: 1) {
+            self.inputActivationView.alpha = 1
+        }
     }
 }
 
@@ -88,4 +95,14 @@ extension HomeViewController: CLLocationManagerDelegate{
         
     }
 }
+
+
+// MARK: - LocationInputActivationViewDelegate
+
+extension HomeViewController: LocationInputActivationViewDelegate{
+    func presentLocationInputView() {
+        print("DEBUG: presentLocationInputView")
+    }
+}
+
 
