@@ -13,6 +13,8 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     private let mapKit = MKMapView()
     private let locationManager = CLLocationManager()
+
+    private let inputActivationView = LocationInputActivationView()
     
     // MARK: - LifeCycle
 
@@ -27,6 +29,18 @@ class HomeViewController: UIViewController {
         mapKit.showsUserLocation = true
         mapKit.userTrackingMode = .follow
         locationManager.delegate = self
+        setupUI()
+    }
+    
+    func setupUI() {
+        configureLocationInputActivationView()
+    }
+    
+    func configureLocationInputActivationView() {
+        view.addSubview(inputActivationView)
+        inputActivationView.centerX(inView: view)
+        inputActivationView.setDimensions(height: 50, width: view.frame.width - 64)
+        inputActivationView.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
     }
 }
 
