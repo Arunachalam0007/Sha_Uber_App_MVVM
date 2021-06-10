@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Properties
     private let mapKit = MKMapView()
-    private let locationManager = CLLocationManager()
+    private let locationManager = LocationHandler.shared.locationManager
 
     private let inputActivationView = LocationInputActivationView()
     private let locationInputView = LocationInputView()
@@ -41,7 +41,6 @@ class HomeViewController: UIViewController {
         mapKit.frame = view.frame
         mapKit.showsUserLocation = true
         mapKit.userTrackingMode = .follow
-        locationManager.delegate = self
         setupUI()
     }
     
@@ -127,28 +126,15 @@ extension HomeViewController: LocationInputViewDelegate{
 
 // MARK: - Location Service
 
-extension HomeViewController: CLLocationManagerDelegate{
+extension HomeViewController{
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .notDetermined {
-            locationManager.requestWhenInUseAuthorization()
-        }
-        if status == .authorizedWhenInUse {
-            locationManager.requestAlwaysAuthorization()
-        }
-        if status == .authorizedAlways {
-            print("DEBUG: Authorized Always")
-            locationManager.startUpdatingLocation()
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        }
-    }
-    
+
     // Not needed this for Find Authorized status of location manger
     func enableLocationServices(){
-        switch locationManager.authorizationStatus{
+        switch locationManager?.authorizationStatus{
         case .notDetermined:
             print("DEBUG: Authorization status is Not Determined")
-            locationManager.requestWhenInUseAuthorization()
+            locationManager?.requestWhenInUseAuthorization()
         case .restricted:
             print("DEBUG: Authorization status is  Restricted")
 
@@ -158,11 +144,11 @@ extension HomeViewController: CLLocationManagerDelegate{
         case .authorizedAlways:
             print("DEBUG:  Authorized Always")
             // This will update the location
-            locationManager.startUpdatingLocation()
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager?.startUpdatingLocation()
+            locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         case .authorizedWhenInUse:
-            print("DEBUG: Authorization status is Authorized When In Use")
-            locationManager.requestAlwaysAuthorization()
+            print("DEBUG: Authorization status is Authorized When In Use?")
+            locationManager?.requestAlwaysAuthorization()
         @unknown default:
             break
         }

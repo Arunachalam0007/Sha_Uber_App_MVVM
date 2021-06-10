@@ -28,6 +28,7 @@
 		DBEB7B0B2670C12A00B8535F /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB7B0A2670C12A00B8535F /* UserViewModel.swift */; };
 		DBEB7B0D2670C14A00B8535F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB7B0C2670C14A00B8535F /* UserModel.swift */; };
 		DBEB7B112670C83100B8535F /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB7B102670C83100B8535F /* ProfileService.swift */; };
+		DBEB7B1326721C4100B8535F /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB7B1226721C4100B8535F /* LocationHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		DBEB7B0A2670C12A00B8535F /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		DBEB7B0C2670C14A00B8535F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		DBEB7B102670C83100B8535F /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		DBEB7B1226721C4100B8535F /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				DB1314852666090100FE19DC /* Extensions.swift */,
+				DBEB7B1226721C4100B8535F /* LocationHandler.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -224,7 +227,7 @@
 				DB13145F2666000A00FE19DC /* Sources */,
 				DB1314602666000A00FE19DC /* Frameworks */,
 				DB1314612666000A00FE19DC /* Resources */,
-				535536EE01417265EF596B92 /* [CP] Embed Pods Frameworks */,
+				EB6FC81ACE439AF1323A445D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,23 +286,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		535536EE01417265EF596B92 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sha_Uber_App_MVVM/Pods-Sha_Uber_App_MVVM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sha_Uber_App_MVVM/Pods-Sha_Uber_App_MVVM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sha_Uber_App_MVVM/Pods-Sha_Uber_App_MVVM-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CE253C7C6A3F23BD4B9480DA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,6 +308,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EB6FC81ACE439AF1323A445D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sha_Uber_App_MVVM/Pods-Sha_Uber_App_MVVM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sha_Uber_App_MVVM/Pods-Sha_Uber_App_MVVM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sha_Uber_App_MVVM/Pods-Sha_Uber_App_MVVM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -336,6 +339,7 @@
 				DB13148F2666667C00FE19DC /* AuthenticationViewModel.swift in Sources */,
 				DB1314672666000A00FE19DC /* AppDelegate.swift in Sources */,
 				DB1314692666000A00FE19DC /* SceneDelegate.swift in Sources */,
+				DBEB7B1326721C4100B8535F /* LocationHandler.swift in Sources */,
 				DB13149B26680F4700FE19DC /* LocationCell.swift in Sources */,
 				DB131493266758D400FE19DC /* HomeViewController.swift in Sources */,
 				DBEB7B0D2670C14A00B8535F /* UserModel.swift in Sources */,
@@ -406,6 +410,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -467,6 +472,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

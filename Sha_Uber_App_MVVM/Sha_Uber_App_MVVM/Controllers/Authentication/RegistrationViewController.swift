@@ -105,6 +105,8 @@ class RegistrationViewController: UIViewController {
         registrationVM.registerUserDetails { result in
             if let result = result {
                 print("DEBUG: SignUp SuccessFUlly: ",result)
+                self.navigationController?.pushViewController(HomeViewController(), animated: true)
+                
             } else {
                 print("DEBUG: SignUp Error")
             }

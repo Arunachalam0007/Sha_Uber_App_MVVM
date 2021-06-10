@@ -75,7 +75,7 @@ class LoginViewController: UIViewController {
             guard let result = result else {
                 return
             }
-            print("DEBUG: Login SuccessFully: ",result)
+            self.navigationController?.pushViewController(HomeViewController(), animated: true)
         }
     }
     

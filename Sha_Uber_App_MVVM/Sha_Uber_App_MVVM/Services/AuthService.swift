@@ -6,12 +6,14 @@
 //
 
 import Firebase
+import GeoFire
 
 struct AuthenticationCredentials{
     var email:String
     var password:String
     var fullname:String
     var type:String
+    var userLocation: CLLocation?
 }
 
 struct AuthService {
@@ -62,6 +64,17 @@ struct AuthService {
                                               "fullname":authCredentials.fullname,
                                               "rideType":authCredentials.type,
                                               "userID":userId]
+
+                // Stroe
+                if (authCredentials.type == "Driver"){
+                    let driveDocumentRef = Database.database().reference().child("driver-locations")
+//                        Firestore.firestore().collection("driver-locations").document()
+                    let geoFire =  GeoFire(firebaseRef: driveDocumentRef)
+                    geoFire.setLocation(authCredentials.userLocation!, forKey: userId) { error in
+                        print("DEBUG GEOFIRE ERROR: ", error)
+                    }
+     
+                }
                 
                 // Store UserData in Firebase database with documentId as userId
                 Firestore.firestore().collection("users").document(userId).setData(userData, merge: false) { error in

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol FormViewModel {
     func updateFormBtn()
@@ -58,7 +59,7 @@ struct RegistrationViewModel {
     var password: String?
     var fullname: String?
     var rideType: String?
-    
+    var location: CLLocation?
     var btnIsValid: Bool {
         return email?.isEmpty == false && password?.isEmpty == false && fullname?.isEmpty == false
     }
@@ -67,13 +68,15 @@ struct RegistrationViewModel {
         return btnIsValid ? .mainBlueTint : .backgroundColor
     }
     
-    func registerUserDetails(completion:@escaping (String?)->()) {
+    mutating func registerUserDetails(completion:@escaping (String?)->()) {
         guard let email = email,let password = password,let fullname = fullname,let rideType = rideType else {
             print("DEBUG: please fill all your information")
             return
         }
-        
-        let authCredentials = AuthenticationCredentials(email: email, password: password, fullname: fullname, type: rideType)
+        if rideType == "Driver" {
+            self.location =  LocationHandler.shared.locationManager.location
+        }
+        let authCredentials = AuthenticationCredentials(email: email, password: password, fullname: fullname, type: rideType, userLocation: location)
         AuthService().registerUser(authCredentials: authCredentials) { response in
             completion(response)
         }
