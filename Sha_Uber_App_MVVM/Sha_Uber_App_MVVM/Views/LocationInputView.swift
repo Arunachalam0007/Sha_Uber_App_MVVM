@@ -28,7 +28,7 @@ class LocationInputView: UIView {
         let label = UILabel()
         label.textColor = .darkGray
         label.font = UIFont.systemFont(ofSize: 16)
-        label.text = "ARUN SHA"
+//        label.text = "ARUN SHA"
         return label
     }()
     

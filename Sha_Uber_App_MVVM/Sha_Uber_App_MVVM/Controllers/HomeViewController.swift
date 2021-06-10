@@ -24,10 +24,14 @@ class HomeViewController: UIViewController {
     
     private let tableView = UITableView()
 
+    private  let userVM = UserViewModel()
 
     // MARK: - LifeCycle
 
     override func viewDidLoad() {
+        userVM.fetchUser(){
+            self.locationInputView.titleLabel.text = self.userVM.userName
+        }
         configureUI()
     }
     

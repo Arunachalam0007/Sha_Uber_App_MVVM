@@ -25,6 +25,9 @@
 		DB13149726676DD500FE19DC /* LocationInputActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB13149626676DD500FE19DC /* LocationInputActivationView.swift */; };
 		DB1314992667850200FE19DC /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1314982667850200FE19DC /* LocationInputView.swift */; };
 		DB13149B26680F4700FE19DC /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB13149A26680F4700FE19DC /* LocationCell.swift */; };
+		DBEB7B0B2670C12A00B8535F /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB7B0A2670C12A00B8535F /* UserViewModel.swift */; };
+		DBEB7B0D2670C14A00B8535F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB7B0C2670C14A00B8535F /* UserModel.swift */; };
+		DBEB7B112670C83100B8535F /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB7B102670C83100B8535F /* ProfileService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		DB13149626676DD500FE19DC /* LocationInputActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputActivationView.swift; sourceTree = "<group>"; };
 		DB1314982667850200FE19DC /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
 		DB13149A26680F4700FE19DC /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		DBEB7B0A2670C12A00B8535F /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		DBEB7B0C2670C14A00B8535F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		DBEB7B102670C83100B8535F /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 		DB13147A2666003D00FE19DC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DBEB7B0C2670C14A00B8535F /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -129,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				DB13148E2666667C00FE19DC /* AuthenticationViewModel.swift */,
+				DBEB7B0A2670C12A00B8535F /* UserViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -153,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				DB131490266666C800FE19DC /* AuthService.swift */,
+				DBEB7B102670C83100B8535F /* ProfileService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -323,12 +332,15 @@
 				DB13149726676DD500FE19DC /* LocationInputActivationView.swift in Sources */,
 				DB1314822666014000FE19DC /* LoginViewController.swift in Sources */,
 				DB13148B2666590500FE19DC /* AuthButton.swift in Sources */,
+				DBEB7B112670C83100B8535F /* ProfileService.swift in Sources */,
 				DB13148F2666667C00FE19DC /* AuthenticationViewModel.swift in Sources */,
 				DB1314672666000A00FE19DC /* AppDelegate.swift in Sources */,
 				DB1314692666000A00FE19DC /* SceneDelegate.swift in Sources */,
 				DB13149B26680F4700FE19DC /* LocationCell.swift in Sources */,
 				DB131493266758D400FE19DC /* HomeViewController.swift in Sources */,
+				DBEB7B0D2670C14A00B8535F /* UserModel.swift in Sources */,
 				DB1314862666090100FE19DC /* Extensions.swift in Sources */,
+				DBEB7B0B2670C12A00B8535F /* UserViewModel.swift in Sources */,
 				DB13148826664D8A00FE19DC /* RegistrationViewController.swift in Sources */,
 				DB131491266666C800FE19DC /* AuthService.swift in Sources */,
 				DB1314992667850200FE19DC /* LocationInputView.swift in Sources */,
